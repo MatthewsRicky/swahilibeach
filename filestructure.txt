@@ -1,0 +1,191 @@
+
+swahili-beach/
+│
+├── app/
+│   ├── layout.tsx
+│   ├── globals.css
+│   ├── not-found.tsx
+│   ├── error.tsx
+│   ├── loading.tsx
+│   │
+│   ├── (website)/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   │
+│   │   ├── rooms/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── special-offers/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── restaurant/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── features/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── activities/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── diani-beach/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── conference/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── wedding/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── luxury-sustainability/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── about-us/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── contact-us/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── location/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── blog/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── privacy-policy/
+│   │   │   └── page.tsx
+│   │   │
+│   │   └── terms/
+│   │       └── page.tsx
+│   │
+│   ├── api/
+│   │   ├── contact/
+│   │   │   └── route.ts
+│   │   └── newsletter/
+│   │       └── route.ts
+│   │
+│   ├── robots.ts
+│   └── sitemap.ts
+│
+├── components/
+│   ├── layout/
+│   │   ├── SiteHeader.tsx
+│   │   ├── SiteFooter.tsx
+│   │   ├── MainNavigation.tsx
+│   │   ├── MobileNavigation.tsx
+│   │   └── BookingBar.tsx
+│   │
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Container.tsx
+│   │   ├── SectionHeading.tsx
+│   │   ├── Breadcrumbs.tsx
+│   │   ├── ImageGallery.tsx
+│   │   ├── Accordion.tsx
+│   │   └── Modal.tsx
+│   │
+│   ├── sections/
+│   │   ├── home/
+│   │   ├── rooms/
+│   │   ├── services/
+│   │   ├── dining/
+│   │   ├── offers/
+│   │   ├── experiences/
+│   │   ├── events/
+│   │   └── shared/
+│   │
+│   ├── booking/
+│   │   ├── BookingCTA.tsx
+│   │   ├── BookingWidget.tsx
+│   │   └── BookingLink.tsx
+│   │
+│   ├── forms/
+│   │   ├── ContactForm.tsx
+│   │   ├── NewsletterForm.tsx
+│   │   ├── WeddingEnquiryForm.tsx
+│   │   └── ConferenceEnquiryForm.tsx
+│   │
+│   └── shared/
+│       ├── WhatsAppButton.tsx
+│       ├── SocialLinks.tsx
+│       ├── FAQSection.tsx
+│       └── ScrollToTop.tsx
+│
+├── data/
+│   ├── navigation.ts
+│   ├── resort.ts
+│   ├── rooms.ts
+│   ├── services.ts
+│   ├── restaurants.ts
+│   ├── offers.ts
+│   ├── activities.ts
+│   ├── conferences.ts
+│   ├── weddings.ts
+│   ├── testimonials.ts
+│   ├── awards.ts
+│   ├── faqs.ts
+│   └── blog.ts
+│
+├── types/
+│   ├── resort.ts
+│   ├── room.ts
+│   ├── restaurant.ts
+│   ├── offer.ts
+│   ├── activity.ts
+│   ├── event.ts
+│   ├── blog.ts
+│   └── forms.ts
+│
+├── lib/
+│   ├── utils.ts
+│   ├── constants.ts
+│   ├── metadata.ts
+│   ├── seo.ts
+│   ├── email.ts
+│   ├── schemas/
+│   │   ├── contact.ts
+│   │   ├── newsletter.ts
+│   │   └── enquiry.ts
+│   └── booking.ts
+│
+├── hooks/
+│   ├── useScrollPosition.ts
+│   └── useMediaQuery.ts
+│
+├── public/
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── resort/
+│   │   ├── architecture/
+│   │   ├── rooms/
+│   │   ├── spa/
+│   │   ├── pools/
+│   │   ├── restaurants/
+│   │   ├── activities/
+│   │   ├── weddings/
+│   │   ├── conferences/
+│   │   ├── offers/
+│   │   ├── sustainability/
+│   │   ├── awards/
+│   │   └── blog/
+│   │
+│   ├── icons/
+│   ├── fonts/
+│   └── documents/
+│
+├── .env.local
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+└── tsconfig.json
