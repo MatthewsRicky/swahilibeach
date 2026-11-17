@@ -163,7 +163,7 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-5 pt-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           
             <p>
-              © {<CurrentYear />} Swahili Beach Resort. All rights
+              © <CurrentYear /> Swahili Beach Resort. All rights
               reserved.
             </p>
           

@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/hero/hero-main.jpg"
+          src="/images/hero/bnnr-002.webp"
           alt="Swahili Beach Resort in Diani Beach, Kenya"
           fill
           priority
