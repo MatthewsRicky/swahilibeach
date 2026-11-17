@@ -78,6 +78,23 @@ swahili-beach/
 │   └── sitemap.ts
 │
 ├── components/
+├── animations/
+│   ├── FadeIn.tsx
+│   ├── FadeUp.tsx
+│   ├── StaggerContainer.tsx
+│   ├── StaggerItem.tsx
+│   ├── ImageReveal.tsx
+│   ├── ParallaxImage.tsx
+│   └── AnimatedCounter.tsx
+│
+├── ui/
+│   ├── AnimatedButton.tsx
+│   ├── HoverCard.tsx
+│   ├── MagneticLink.tsx
+│   └── AnimatedUnderline.tsx
+│
+|-- |--hooks/
+|   |   |--useReducedMotionPreference.ts
 │   ├── layout/
 │   │   ├── SiteHeader.tsx
 │   │   ├── SiteFooter.tsx
