@@ -73,7 +73,7 @@ export default function IntroductionSection() {
                 src="/images/architecture/highlights-119-1-2.jpg"
                 alt="Swahili-inspired architecture at Swahili Beach Resort"
                 aspectRatio="4 / 5"
-                className="w-full shadow-md shadow-black/40"
+                className="w-full shadow-lg shadow-black/35 rounded-md"
                 imageClassName="object-center"
                 sizes="(max-width: 1024px) 90vw, 45vw"
               />
@@ -84,7 +84,7 @@ export default function IntroductionSection() {
                   src="/images/pools/DJI_0147-1024x764.jpg"
                   alt="The cascading swimming pools at Swahili Beach Resort"
                   aspectRatio="1 / 1"
-                  className="w-full shadow-md shadow-black/40"
+                  className="w-full shadow-md shadow-black/40 rounded-sm"
                   sizes="(max-width: 1024px) 45vw, 22vw"
                 />
               </div>

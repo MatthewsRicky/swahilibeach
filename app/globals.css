@@ -1,6 +1,4 @@
-
 @import "tailwindcss";
-
 
 :root {
   --brand-ocean: #173b55;
@@ -44,7 +42,6 @@
   --font-display: var(--font-display-family);
   --font-sans: var(--font-body-family);
 }
-
 
 * {
   box-sizing: border-box;
@@ -130,7 +127,7 @@ img {
   text-transform: uppercase;
 }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -143,8 +140,7 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.1ms !important;
   }
-} */
-
+}
 
 /* Desktop navigation underline */
 
@@ -161,12 +157,11 @@ img {
   background-color: var(--brand-gold);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
-.nav-link:hover
-.nav-underline,
+.nav-link:hover .nav-underline,
 .nav-link:focus-visible .nav-underline,
 .nav-link[aria-current="page"] .nav-underline,
 .nav-underline-active {

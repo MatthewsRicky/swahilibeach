@@ -8,14 +8,15 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 export default function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
 
-  const initial = shouldReduceMotion ? false : { opacity: 0, y: 24 };
+  const initial = { opacity: 0, y: 24 };
+
+  const transition = {
+    duration: shouldReduceMotion ? 0 : 1,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
 
   const visible = { opacity: 1, y: 0 };
 
-  const transition = {
-    duration: 1,
-    ease: [0.22, 1, 0.36, 1] as const,
-  };
 
   return (
     <section className="relative isolate min-h-[calc(100svh-84px)] overflow-hidden bg-ocean text-white">

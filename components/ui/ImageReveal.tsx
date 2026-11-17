@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
 
 type ImageRevealProps = {
   src: string;
@@ -24,24 +21,10 @@ export default function ImageReveal({
   sizes = "(max-width: 768px) 100vw, 50vw",
   objectPosition = "center",
 }: ImageRevealProps) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
-    <motion.div
-      className={`relative overflow-hidden ${className}`}
+    <div
+      className={`relative w-full overflow-hidden ${className}`}
       style={{ aspectRatio }}
-      initial={shouldReduceMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
-      whileInView={
-        shouldReduceMotion ? undefined : { clipPath: "inset(0 0 0% 0)" }
-      }
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
     >
       <Image
         src={src}
@@ -52,6 +35,6 @@ export default function ImageReveal({
         className={`object-cover ${imageClassName}`}
         style={{ objectPosition }}
       />
-    </motion.div>
+    </div>
   );
 }
