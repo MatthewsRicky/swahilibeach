@@ -1,6 +1,7 @@
 import AwardsSection from "@/components/sections/home/AwardsSection";
 import DiningPreview from "@/components/sections/home/DiningPreview";
 import ExperiencesPreview from "@/components/sections/home/ExperiencesPreview";
+import FAQSection from "@/components/sections/home/FAQSection";
 import FinalCtaSection from "@/components/sections/home/FinalCtaSection";
 import HeroSection from "@/components/sections/home/HeroSection";
 import IntroductionSection from "@/components/sections/home/IntroductionSection";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <OffersPreview />
       <TestimonialSection />
       <AwardsSection />
+      <FAQSection />
       <FinalCtaSection />
     </main>
   );
