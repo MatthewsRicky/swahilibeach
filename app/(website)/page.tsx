@@ -1,3 +1,4 @@
+import AppAndMembershipSection from "@/components/sections/home/AppAndMembershipSection";
 import AwardsSection from "@/components/sections/home/AwardsSection";
 import DiningPreview from "@/components/sections/home/DiningPreview";
 import ExperiencesPreview from "@/components/sections/home/ExperiencesPreview";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <AwardsSection />
       <FAQSection />
       <FinalCtaSection />
+      <AppAndMembershipSection />
     </main>
   );
 }

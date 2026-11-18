@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-ivory/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-ivory/95">
       <div className="container relative flex h-[84px] items-center justify-between gap-6">
         {/* Resort Logo */}
         <Link
