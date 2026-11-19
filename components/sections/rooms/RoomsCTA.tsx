@@ -18,9 +18,10 @@ export default function RoomsCta() {
     <>
       <section className="relative isolate flex min-h-[520px] items-center overflow-hidden bg-ocean md:min-h-[600px]">
         <Image
-          src="/images/rooms/rooms-cta.jpg"
+          src="/images/rooms/SWAHILI-BEACH-Rooms-37-1.png"
           alt="Elegant accommodation at Swahili Beach Resort"
           fill
+          loading="eager"
           sizes="100vw"
           className="object-cover"
         />
