@@ -29,7 +29,7 @@ export default function LocationPage() {
         eyebrow="Find Us"
         title="A coastal escape, perfectly placed."
         description="Set along the shores of Diani Beach on Kenya's South Coast, Swahili Beach Resort offers a setting surrounded by coastal beauty and the Indian Ocean."
-        image="/images/resort/location-hero.jpg"
+        image="/images/hd/SWAHILI-BEACH-3.jpg"
         imageAlt="Aerial view of Diani Beach and the Indian Ocean"
       />
 
@@ -37,7 +37,7 @@ export default function LocationPage() {
         eyebrow="Our Setting"
         title="Where the coastline becomes your escape."
         description="Located on Beach Road in Diani Beach, Swahili Beach Resort sits along one of Kenya's best-known coastal destinations. The setting brings together the Indian Ocean, white sandy shores and the character of the Kenyan coast."
-        image="/images/resort/location-aerial.jpg"
+        image="/images/hd/package-images-swahili-beach.jpg"
         imageAlt="Diani Beach coastline viewed from above"
         background="ivory"
       />
@@ -150,7 +150,7 @@ export default function LocationPage() {
         eyebrow="Plan Your Stay"
         title="The coast is closer than you think."
         description="Speak with our team about your visit, arrival arrangements and upcoming stay."
-        image="/images/resort/location-cta.jpg"
+        image="/images/hd/SWAHILI-BEACH-3.jpg"
         imageAlt="Swahili Beach Resort and its coastal surroundings"
         href="/contact-us"
         linkLabel="Contact the resort"

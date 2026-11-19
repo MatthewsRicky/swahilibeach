@@ -27,7 +27,7 @@ export default function AboutUsPage() {
         eyebrow="Our Beginning"
         title="A story shaped by the coast."
         description="History begins in 2012. Swahili Beach Resort brings together the character of the Kenyan coast and a contemporary approach to hospitality. Its identity is inspired by the region's cultural heritage, creating a setting where architecture, atmosphere and the surrounding landscape come together."
-        image="/images/architecture/resort-architecture.jpg"
+        image="/images/architecture/DSC_5652-min-scaled.jpg"
         imageAlt="Architectural details at Swahili Beach Resort"
         background="ivory"
       />
@@ -73,7 +73,7 @@ export default function AboutUsPage() {
         eyebrow="Architecture & Identity"
         title="A distinctive expression of coastal design."
         description="The resort's architectural character draws inspiration from Swahili and Arabic influences. Traditional references and contemporary comforts create an environment with a strong sense of place."
-        image="/images/architecture/architectural-details.jpg"
+        image="/images/architecture/59021254-1147772736.jpg"
         imageAlt="Swahili-inspired architectural details"
         reverse
         background="ivory"
@@ -83,7 +83,7 @@ export default function AboutUsPage() {
         eyebrow="Experience Swahili Beach"
         title="Discover a different side of the Kenyan coast."
         description="Explore the resort's rooms, dining experiences and collection of activities, all set along the shores of Diani Beach."
-        image="/images/resort/about-cta.jpg"
+        image="/images/architecture/highlights-119-1-2.jpg"
         imageAlt="The resort overlooking the Indian Ocean"
         href="/rooms"
         linkLabel="Explore the resort"

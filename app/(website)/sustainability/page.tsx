@@ -19,7 +19,7 @@ export default function SustainabilityPage() {
         eyebrow="Luxury With Purpose"
         title="Protecting nature. Empowering communities."
         description="A commitment to preserving the coastal environment and supporting the communities that make Diani such a special destination."
-        image="/images/sustainability/sustainability-hero.jpg"
+        image="/images/sustainability/Reef-6-Dec-24.png"
         imageAlt="The natural coastal environment around Diani Beach"
       />
 
@@ -27,7 +27,7 @@ export default function SustainabilityPage() {
         eyebrow="Our Commitment"
         title="A more thoughtful way to experience the coast."
         description="Sustainability is an important part of Swahili Beach Resort's approach to hospitality. Through environmental initiatives and community partnerships, the resort aims to help protect Diani Beach's natural environment while contributing to the well-being of the people who call this region home."
-        image="/images/sustainability/coastal-environment.jpg"
+        image="/images/sustainability/Reef-8-Dec-24.jpg"
         imageAlt="Coastal landscape and marine environment"
         background="ivory"
       />
@@ -73,7 +73,7 @@ export default function SustainabilityPage() {
         eyebrow="ReefoDivers"
         title="Helping restore the reefs beneath the waves."
         description="ReefoDivers is Swahili Beach Resort's in-house coral reef restoration project. The initiative has established six coral depth gradients and twelve coral tree nurseries, which are maintained and monitored as the coral grows. Once mature, the coral is transplanted onto artificial reef structures to support natural reef regeneration. The long-term ambition is to expand the initiative across the Diani-Chale Marine Reserve in collaboration with local communities and stakeholders."
-        image="/images/sustainability/reefodivers-coral.jpg"
+        image="/images/sustainability/Reef-1-Dec-24.jpg"
         imageAlt="Coral restoration and marine conservation"
         background="ivory"
         points={[
@@ -88,7 +88,7 @@ export default function SustainabilityPage() {
         eyebrow="Farm to Table"
         title="A closer connection to the food we serve."
         description="The resort's Farm to Table concept highlights seasonal ingredients sourced from its own farm and trusted local partners. This approach supports local suppliers while bringing fresh produce into the dining experience. Guests interested in the farm can enquire about arranging a visit through the Guest Relations Desk."
-        image="/images/sustainability/farm-to-table.jpg"
+        image="/images/sustainability/farm.png"
         imageAlt="Fresh seasonal ingredients and farm produce"
         reverse
         background="white"
@@ -98,7 +98,7 @@ export default function SustainabilityPage() {
         eyebrow="A Greener Future"
         title="Thoughtful changes, everyday impact."
         description="Swahili Beach Resort states that it has eliminated single-use plastics across the property. Alternatives include paper straws and reusable glass water bottles. These changes form part of its wider effort to reduce waste and protect the surrounding coastal environment."
-        image="/images/sustainability/plastic-free.jpg"
+        image="/images/sustainability/Turtle-Adoption-1024x1024.png"
         imageAlt="Reusable glass water bottles and sustainable alternatives"
         background="ivory"
       />
@@ -107,7 +107,7 @@ export default function SustainabilityPage() {
         eyebrow="People & Community"
         title="Hospitality that reaches beyond our walls."
         description="The resort supports community-driven initiatives including Leg It 4 a Cause, Action in Focus and its collaboration with Born Again Children's Home. These programmes support causes ranging from prosthetic limbs and mental health support to food drives and assistance for vulnerable children."
-        image="/images/sustainability/community-support.jpg"
+        image="/images/sustainability/image00003-1024x1024.jpeg"
         imageAlt="Community engagement and local support"
         reverse
         background="white"
@@ -117,7 +117,7 @@ export default function SustainabilityPage() {
         eyebrow="Luxury Sustainability"
         title="Be part of a more thoughtful journey."
         description="Discover how the resort brings environmental care and community support into its approach to coastal hospitality."
-        image="/images/sustainability/sustainability-cta.jpg"
+        image="/images/sustainability/Reef-2-Dec-24.jpg"
         imageAlt="Aerial view of the Diani coastline"
         href="/contact-us"
         linkLabel="Get in touch"

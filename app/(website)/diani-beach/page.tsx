@@ -19,7 +19,7 @@ export default function DianiBeachPage() {
         eyebrow="Discover Diani"
         title="A destination with its own rhythm."
         description="Explore the natural beauty, coastal culture and unforgettable experiences of Diani Beach, where the Indian Ocean sets the pace."
-        image="/images/diani/diani-hero.jpg"
+        image="/images/hd/I-love-Diani-sign-Diani-Beach-Kenya-TortoisePathcom-6-jpeg.webp"
         imageAlt="White sandy beach and turquoise waters of Diani"
       />
 
@@ -27,7 +27,7 @@ export default function DianiBeachPage() {
         eyebrow="The Kenyan Coast"
         title="A little more than a beach escape."
         description="Diani Beach brings together white sandy shores, turquoise Indian Ocean waters and a rich coastal identity. From quiet moments by the sea to marine adventures and cultural discovery, the destination offers plenty of ways to experience the Kenyan coast."
-        image="/images/diani/diani-coastline.jpg"
+        image="/images/hd/Diani-Beach.jpg"
         imageAlt="The white sandy coastline of Diani Beach"
         background="ivory"
       />
@@ -87,7 +87,7 @@ export default function DianiBeachPage() {
         eyebrow="Beyond The Shore"
         title="Discover a different side of the coast."
         description="Diani's appeal extends beyond its beaches. The surrounding region offers opportunities to explore coastal landscapes, encounter local culture and experience nature away from the shoreline. Ask the resort's Guest Relations team about excursions and activities available during your stay."
-        image="/images/diani/beyond-the-beach.jpg"
+        image="/images/hd/OIP-4220949851.jpg"
         imageAlt="Natural landscapes around Kenya's South Coast"
         reverse
         background="ivory"
@@ -121,7 +121,7 @@ export default function DianiBeachPage() {
         eyebrow="Your Diani Escape"
         title="Make the coast part of your story."
         description="Experience Diani from the comfort of Swahili Beach Resort. Our team can help you discover the experiences waiting beyond your stay."
-        image="/images/diani/diani-cta.jpg"
+        image="/images/hd/pool.jpg"
         imageAlt="A beautiful Diani Beach sunset"
         href="/contact-us"
         linkLabel="Plan your visit"
