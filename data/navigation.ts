@@ -9,6 +9,10 @@ export type NavigationItem = {
 
 export const navigationItems: NavigationItem[] = [
   {
+    label: "Home",
+    href: "/"
+  },
+  {
     label: "The Resort",
     href: "/about-us",
     children: [
