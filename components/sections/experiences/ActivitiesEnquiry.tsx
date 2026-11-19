@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
+import ExperienceFAQ from "@/components/sections/experiences/ExperienceFAQ";
+import { thingsToDoFAQs } from "@/data/things-to-do-faqs";
 
 export default function ActivitiesEnquiry() {
   return (
@@ -52,6 +54,13 @@ export default function ActivitiesEnquiry() {
             </p>
           </div>
         </div>
+
+        <ExperienceFAQ
+          eyebrow="Plan your experience"
+          title="Frequently asked questions"
+          description="A few helpful details to help you plan your time exploring Diani Beach and the experiences available around the resort."
+          items={thingsToDoFAQs}
+        />
       </section>
     </>
   );

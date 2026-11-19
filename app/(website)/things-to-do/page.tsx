@@ -6,6 +6,7 @@ import ActivityDirectory from "@/components/sections/experiences/ActivityDirecto
 import ActivitiesEnquiry from "@/components/sections/experiences/ActivitiesEnquiry";
 import ResortPageCta from "@/components/sections/resort/ResortPageCta";
 
+
 export const metadata: Metadata = {
   title: "Things to Do",
   description:

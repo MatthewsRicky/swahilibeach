@@ -10,6 +10,8 @@ import ResortPageHero from "@/components/sections/resort/ResortPageHero";
 import EditorialSection from "@/components/sections/resort/EditorialSection";
 import ResortFeatureGrid from "@/components/sections/resort/ResortFeatureGrid";
 import ResortPageCta from "@/components/sections/resort/ResortPageCta";
+import ExperienceFAQ from "@/components/sections/experiences/ExperienceFAQ";
+import { featuresFAQs } from "@/data/features-faqs";
 
 export const metadata: Metadata = {
   title: "Features of Swahili Beach",
@@ -140,6 +142,12 @@ export default function FeaturesPage() {
         imageAlt="The resort's architecture and cascading pools"
         href="/rooms"
         linkLabel="Explore rooms & suites"
+      />
+      <ExperienceFAQ
+        eyebrow="A little more to know"
+        title="Frequently asked questions"
+        description="Discover more about the experiences, hospitality, and details that make a stay at Swahili Beach Resort distinctive."
+        items={featuresFAQs}
       />
     </>
   );
