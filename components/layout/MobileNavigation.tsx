@@ -129,7 +129,7 @@ export default function MobileNavigation() {
             setIsOpen(true);
           }
         }}
-        className={`relative z-[60] flex size-11 items-center justify-center transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold lg:hidden ${
+        className={`relative z-[60] flex size-11 items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold lg:hidden ${
           isOpen ? "text-ivory hover:text-gold" : "text-ocean hover:text-gold"
         }`}
       >

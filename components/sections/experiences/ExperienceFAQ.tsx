@@ -75,8 +75,8 @@ export default function ExperienceFAQ({
                     <span
                       className={`flex h-10 w-10 shrink-0 items-center justify-center transition-colors duration-300 ${
                         isOpen
-                          ? "bg-gold text-white"
-                          : "bg-transparent text-gold"
+                          ? "bg-gold text-white rounded-full"
+                          : "bg-transparent text-gold rounded-full"
                       }`}
                     >
                       <ChevronDown

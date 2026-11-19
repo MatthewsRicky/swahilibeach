@@ -170,6 +170,6 @@ img {
 
 @media (prefers-reduced-motion: reduce) {
   .nav-underline {
-    transition-duration: 0.1ms;
+    transition-duration: 0.01ms;
   }
 }
