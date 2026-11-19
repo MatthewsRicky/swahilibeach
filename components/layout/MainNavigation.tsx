@@ -23,7 +23,7 @@ export default function MainNavigation() {
 
   return (
     <nav aria-label="Main navigation" className="hidden items-center lg:flex">
-      <ul className="flex items-center gap-6 xl:gap-8">
+      <ul className="flex items-center gap-5 xl:gap-8">
         {navigationItems.map((item) => {
           const active = isActiveItem(pathname, item);
 
@@ -32,7 +32,7 @@ export default function MainNavigation() {
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className="nav-link relative inline-flex items-center gap-1.5 py-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-charcoal/80 transition-colors duration-300 hover:text-ocean focus-visible:text-ocean"
+                className="nav-link relative inline-flex items-center gap-1.5 py-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-charcoal/80 transition-colors duration-300 hover:text-ocean focus-visible:text-ocean"
               >
                 {item.label}
 

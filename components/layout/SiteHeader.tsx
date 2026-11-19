@@ -4,6 +4,7 @@ import Link from "next/link";
 import MainNavigation from "@/components/layout/MainNavigation";
 import MobileNavigation from "@/components/layout/MobileNavigation";
 import Button from "@/components/ui/Button";
+import BookingTrigger from "@/components/booking/BookingTrigger";
 
 export default function SiteHeader() {
   return (
@@ -18,23 +19,31 @@ export default function SiteHeader() {
           <Image
             src="/images/Header-Logo-wepb.webp"
             alt="Swahili Beach Resort"
-            width={190}
+            width={100}
             height={64}
             priority
-            className="h-auto w-[145px] sm:w-[165px] lg:w-[180px]"
+            className="h-auto w-[100px] sm:w-[125px] lg:w-[140px]"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="flex flex-1 justify-center">
+        <div className="flex justify-center">
           <MainNavigation />
         </div>
 
         {/* Desktop Booking Action */}
-        <div className="hidden shrink-0 lg:block">
-          <Button href="/rooms" variant="primary" arrow>
-            Book Your Stay
-          </Button>
+        <div className="hidden shrink-0 text-xs lg:block">
+          <BookingTrigger
+            context={{
+              type: "stay",
+              source: "Main navigation",
+            }}
+            className="inline-flex"
+          >
+            <Button variant="primary" arrow>
+              Book Your Stay
+            </Button>
+          </BookingTrigger>
         </div>
 
         {/* Mobile Navigation */}
