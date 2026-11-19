@@ -7,7 +7,7 @@ export default function CulinaryCta() {
     <section className="relative overflow-hidden bg-ocean">
       <div className="absolute inset-0">
         <Image
-          src="/images/restaurants/dining-cta.jpg"
+          src="/images/hd/SWAHILI-BEACH-12-rest.jpg"
           alt="Dining by the Indian Ocean at Swahili Beach Resort"
           fill
           sizes="100vw"

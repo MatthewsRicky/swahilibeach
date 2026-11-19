@@ -6,7 +6,7 @@ export default function CulinaryHero() {
   return (
     <section className="relative flex min-h-[540px] items-end overflow-hidden bg-ocean sm:min-h-[620px] lg:min-h-[700px]">
       <Image
-        src="/images/restaurants/DSC_5875-1-3.jpg"
+        src="/images/hd/SWAHILI-BEACH-12-rest.jpg"
         alt="Dining experience at Swahili Beach Resort"
         fill
         priority
