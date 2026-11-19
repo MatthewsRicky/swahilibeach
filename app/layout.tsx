@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+
 import "./globals.css";
+
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
+import { BookingProvider } from "@/components/booking/BookingProvider";
+import BookingModal from "@/components/booking/BookingModal";
 
 const displayFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -32,11 +36,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behaviour="smooth">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${displayFont.variable} ${bodyFont.variable}`}>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <BookingProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <BookingModal />
+        </BookingProvider>
       </body>
     </html>
   );

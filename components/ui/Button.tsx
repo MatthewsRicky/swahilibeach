@@ -42,7 +42,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const baseClasses =
-  "group inline-flex min-h-[50px] items-center justify-center gap-3 px-7 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50";
+  "group inline-flex min-h-[30px] rounded-sm items-center justify-center gap-3 px-7 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50";
 
 export default function Button(props: ButtonProps) {
   const {

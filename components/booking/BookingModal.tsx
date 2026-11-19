@@ -1,242 +1,152 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { X, CalendarDays, Users, ArrowRight } from "lucide-react";
+import { useEffect, useId, useRef } from "react";
+import { X } from "lucide-react";
 
-import type { Room } from "@/types/room";
+import { useBooking } from "@/components/booking/BookingProvider";
+import type { BookingType } from "@/types/booking";
+import BookingForm from "@/components/booking/BookingForm";
 
-type BookingModalProps = {
-  room: Room;
-  onClose: () => void;
+const bookingTitles: Record<BookingType, string> = {
+  stay: "Plan your stay",
+  offer: "Enquire about an offer",
+  wedding: "Plan your wedding",
+  conference: "Plan your event",
+  dining: "Discover our dining",
+  spa: "Enquire about the spa",
+  general: "Get in touch",
 };
 
-function getToday() {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
+const bookingDescriptions: Record<BookingType, string> = {
+  stay: "Tell us a little about your visit and our team will help you plan your stay.",
+  offer:
+    "Let us know which offer interests you and when you would like to visit.",
+  wedding:
+    "Share your wedding plans with us and let's start creating something memorable.",
+  conference: "Tell us about your meeting or event requirements.",
+  dining: "Let us help you plan a memorable dining experience.",
+  spa: "Tell us about the experience you are interested in.",
+  general: "Send us your enquiry and our team will be happy to assist.",
+};
 
-  return `${year}-${month}-${day}`;
-}
+export default function BookingModal() {
+  const { isOpen, bookingContext, closeBooking } = useBooking();
 
-export default function BookingModal({ room, onClose }: BookingModalProps) {
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
-  const [adults, setAdults] = useState("2");
-  const [children, setChildren] = useState("0");
-  const [message, setMessage] = useState("");
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+  const descriptionId = useId();
 
-  const today = getToday();
-
-  const validDates =
-    checkIn !== "" && checkOut !== "" && checkIn >= today && checkOut > checkIn;
+  const type = bookingContext.type ?? "stay";
 
   useEffect(() => {
+    if (!isOpen) return;
+
+    const previousActiveElement = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
 
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") onClose();
-    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeBooking();
+        return;
+      }
 
-    window.addEventListener("keydown", handleEscape);
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusableElements = dialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+
+      if (!focusableElements.length) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      previousActiveElement?.focus();
     };
-  }, [onClose]);
+  }, [isOpen, closeBooking]);
 
-  function handleContinue() {
-    if (!validDates) return;
-
-    const bookingDetails = {
-      room: room.name,
-      checkIn,
-      checkOut,
-      adults: Number(adults),
-      children: Number(children),
-    };
-
-    // Booking engine integration will be connected here.
-    console.info("Booking request:", bookingDetails);
-
-    setMessage(
-      "Your dates and guest details are ready. Online booking will be connected here.",
-    );
-  }
+  if (!isOpen) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-charcoal/70 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-charcoal/70 p-3 backdrop-blur-sm sm:p-6"
       onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
+        if (event.target === event.currentTarget) {
+          closeBooking();
+        }
       }}
     >
-      <section
+      <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="booking-title"
-        className="relative my-auto w-full max-w-2xl overflow-hidden bg-ivory shadow-2xl"
+        aria-labelledby={titleId}
+        aria-describedby={descriptionId}
+        className="relative flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden bg-ivory shadow-2xl"
       >
-        {/* Header */}
-        <div className="relative bg-ocean px-6 py-8 text-white md:px-10 md:py-10">
+        {/* Modal header */}
+        <div className="relative border-b border-charcoal/10 px-6 py-7 sm:px-10 sm:py-9">
           <button
+            ref={closeButtonRef}
             type="button"
-            onClick={onClose}
-            aria-label="Close booking modal"
-            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/25 transition-colors hover:bg-white/10"
+            onClick={closeBooking}
+            aria-label="Close booking enquiry"
+            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center text-charcoal/70 transition-colors hover:bg-gold hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
-            <X size={19} />
+            <X size={21} strokeWidth={1.5} />
           </button>
 
-          <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-gold">
-            Your stay begins here
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
+            Swahili Beach Resort
           </p>
 
-          <h2 id="booking-title" className="font-display text-4xl md:text-5xl">
-            Plan your escape.
+          <h2
+            id={titleId}
+            className="max-w-lg font-display text-4xl leading-none text-ocean sm:text-5xl"
+          >
+            {bookingTitles[type]}
           </h2>
 
-          <p className="mt-3 text-sm text-white/70">
-            Selected accommodation: {room.name}
+          <p
+            id={descriptionId}
+            className="mt-4 max-w-lg text-sm leading-7 text-charcoal/70"
+          >
+            {bookingDescriptions[type]}
           </p>
-        </div>
 
-        {/* Booking form */}
-        <div className="space-y-7 px-6 py-8 md:px-10 md:py-10">
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <label
-                htmlFor="check-in"
-                className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-charcoal"
-              >
-                <CalendarDays size={16} className="text-gold" />
-                Check-in
-              </label>
-
-              <input
-                id="check-in"
-                type="date"
-                value={checkIn}
-                min={today}
-                onChange={(event) => {
-                  setCheckIn(event.target.value);
-                  setMessage("");
-
-                  if (checkOut && event.target.value >= checkOut) {
-                    setCheckOut("");
-                  }
-                }}
-                className="w-full border border-charcoal/15 bg-white px-4 py-4 text-sm text-charcoal outline-none transition-colors focus:border-gold"
-                required
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="check-out"
-                className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-charcoal"
-              >
-                <CalendarDays size={16} className="text-gold" />
-                Check-out
-              </label>
-
-              <input
-                id="check-out"
-                type="date"
-                value={checkOut}
-                min={checkIn || today}
-                onChange={(event) => {
-                  setCheckOut(event.target.value);
-                  setMessage("");
-                }}
-                disabled={!checkIn}
-                className="w-full border border-charcoal/15 bg-white px-4 py-4 text-sm text-charcoal outline-none transition-colors focus:border-gold disabled:cursor-not-allowed disabled:opacity-50"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="border-t border-charcoal/10 pt-7">
-            <div className="mb-5 flex items-center gap-2">
-              <Users size={17} className="text-gold" />
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-charcoal">
-                Guests
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="adults"
-                  className="mb-2 block text-sm text-foreground-muted"
-                >
-                  Adults
-                </label>
-
-                <select
-                  id="adults"
-                  value={adults}
-                  onChange={(event) => setAdults(event.target.value)}
-                  className="w-full border border-charcoal/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
-                >
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
-                    <option key={number} value={number}>
-                      {number}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="children"
-                  className="mb-2 block text-sm text-foreground-muted"
-                >
-                  Children
-                </label>
-
-                <select
-                  id="children"
-                  value={children}
-                  onChange={(event) => setChildren(event.target.value)}
-                  className="w-full border border-charcoal/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
-                >
-                  {Array.from({ length: 9 }, (_, index) => (
-                    <option key={index} value={index}>
-                      {index}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {message && (
-            <p
-              role="status"
-              className="border border-gold/30 bg-gold/10 p-4 text-sm leading-6 text-charcoal"
-            >
-              {message}
+          {bookingContext.itemName && (
+            <p className="mt-4 inline-flex border border-gold/40 px-3 py-2 text-xs text-charcoal">
+              Enquiry:{" "}
+              <span className="ml-1 font-medium">
+                {bookingContext.itemName}
+              </span>
             </p>
           )}
-
-          <button
-            type="button"
-            onClick={handleContinue}
-            disabled={!validDates}
-            className="flex w-full items-center justify-center gap-3 bg-ocean px-6 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-gold disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Continue to booking
-            <ArrowRight size={17} />
-          </button>
-
-          <p className="text-center text-xs leading-6 text-foreground-muted">
-            Availability and final rates will be confirmed through our booking
-            system.
-          </p>
         </div>
-      </section>
+
+        {/* Form content will be added next */}
+        <div className="overflow-y-auto px-6 py-8 sm:px-10 sm:py-10">
+          <BookingForm context={bookingContext} onClose={closeBooking} />
+        </div>
+      </div>
     </div>
   );
 }
