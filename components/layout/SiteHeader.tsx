@@ -3,8 +3,7 @@ import Link from "next/link";
 
 import MainNavigation from "@/components/layout/MainNavigation";
 import MobileNavigation from "@/components/layout/MobileNavigation";
-import Button from "@/components/ui/Button";
-import BookingTrigger from "@/components/booking/BookingTrigger";
+import BookingHeaderButton from "@/components/booking/BookingHeaderButton";
 
 export default function SiteHeader() {
   return (
@@ -33,17 +32,7 @@ export default function SiteHeader() {
 
         {/* Desktop Booking Action */}
         <div className="hidden shrink-0 text-xs lg:block">
-          <BookingTrigger
-            context={{
-              type: "stay",
-              source: "Main navigation",
-            }}
-            className="inline-flex"
-          >
-            <Button variant="primary" arrow>
-              Book Your Stay
-            </Button>
-          </BookingTrigger>
+          <BookingHeaderButton />
         </div>
 
         {/* Mobile Navigation */}

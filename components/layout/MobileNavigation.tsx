@@ -9,6 +9,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
 import type { NavigationItem } from "@/data/navigation";
 import Button from "@/components/ui/Button";
+import { useBooking } from "@/components/booking/BookingProvider";
 
 function isActivePath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -33,6 +34,7 @@ export default function MobileNavigation() {
     setIsOpen(false);
     setExpandedItem(null);
   };
+  const { openBooking } = useBooking();
 
   useEffect(() => {
     closeMenu();
@@ -339,10 +341,17 @@ export default function MobileNavigation() {
                 className="shrink-0 border-t border-white/10 bg-[#102F44] px-6 pb-7 pt-5"
               >
                 <Button
-                  href="/contact-us"
                   variant="primary"
                   arrow
                   className="w-full"
+                  onClick={() => {
+                    closeMenu();
+
+                    openBooking({
+                      type: "stay",
+                      source: "Mobile navigation",
+                    });
+                  }}
                 >
                   Enquire Now
                 </Button>

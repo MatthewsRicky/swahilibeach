@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import GuestSelector from "@/components/booking/fields/GuestSelector";
 import type { BookingFormValues } from "@/types/booking";
 import { rooms } from "@/data/rooms";
+
 type StayFieldsProps = {
   values: BookingFormValues;
   updateField: <K extends keyof BookingFormValues>(
@@ -18,8 +20,19 @@ export default function StayFields({
   updateField,
   errors,
 }: StayFieldsProps) {
-  const today = new Date().toISOString().split("T")[0];
+ const [today, setToday] = useState("");
 
+ useEffect(() => {
+   const now = new Date();
+
+   const formattedDate = [
+     now.getFullYear(),
+     String(now.getMonth() + 1).padStart(2, "0"),
+     String(now.getDate()).padStart(2, "0"),
+   ].join("-");
+
+   setToday(formattedDate);
+ }, []);
   return (
     <div className="space-y-7">
       {/* Travel dates */}

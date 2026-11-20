@@ -53,4 +53,8 @@ export const navigationItems: NavigationItem[] = [
       { label: "Conferences", href: "/conference" },
     ],
   },
+  {
+    label: "Contact",
+    href: "/contact-us",
+  },
 ];
