@@ -1,8 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-
-import BookingAction from "@/components/booking/BookingAction";
-import type { BookingContext } from "@/types/booking";
 
 type ResortPageCtaProps = {
   eyebrow: string;
@@ -10,8 +8,8 @@ type ResortPageCtaProps = {
   description: string;
   image: string;
   imageAlt: string;
+  href?: string;
   linkLabel?: string;
-  bookingContext?: BookingContext;
 };
 
 export default function ResortPageCta({
@@ -20,11 +18,8 @@ export default function ResortPageCta({
   description,
   image,
   imageAlt,
+  href = "/contact-us",
   linkLabel = "Get in touch",
-  bookingContext = {
-    type: "general",
-    source: "Resort page CTA",
-  },
 }: ResortPageCtaProps) {
   return (
     <section className="relative isolate overflow-hidden bg-ocean py-24 sm:py-32">
@@ -49,13 +44,13 @@ export default function ResortPageCta({
           {description}
         </p>
 
-        <BookingAction
-          context={bookingContext}
+        <Link
+          href={href}
           className="mt-9 inline-flex items-center gap-4 border border-gold px-7 py-4 text-xs tracking-[0.16em] text-white transition-colors hover:bg-gold"
         >
           {linkLabel}
           <ArrowUpRight size={16} />
-        </BookingAction>
+        </Link>
       </div>
     </section>
   );

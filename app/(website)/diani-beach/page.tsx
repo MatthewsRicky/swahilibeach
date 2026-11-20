@@ -123,11 +123,8 @@ export default function DianiBeachPage() {
         description="Experience Diani from the comfort of Swahili Beach Resort. Our team can help you discover the experiences waiting beyond your stay."
         image="/images/hd/pool.jpg"
         imageAlt="A beautiful Diani Beach sunset"
+        href="/contact-us"
         linkLabel="Plan your visit"
-        bookingContext={{
-          type: "general",
-          source: "Diani Beach page CTA",
-        }}
       />
     </>
   );
